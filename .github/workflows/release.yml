@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '17.x'
+      - run: apt install -y jq
       - run: npm ci
       - run: npm test
       - name: Set package registry
