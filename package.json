@@ -1,11 +1,11 @@
 {
   "name": "@orionprotocol/contracts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Orion Protocol contracts typings",
   "scripts": {
     "test": "exit 0",
     "clean": "rimraf ./web3 && rimraf ./ethers",
-    "postinstall": "./prepare.sh && npm run clean && npm run typechain:generate-types",
+    "build": "./prepare.sh && npm run clean && npm run typechain:generate-types",
     "typechain:generate-types": "npm run typechain:generate-ethers-v5-types && npm run typechain:generate-web3-v1-types",
     "typechain:generate-ethers-v5-types": "typechain --target=ethers-v5 ./abis/*.json --out-dir ./ethers",
     "typechain:generate-web3-v1-types": "typechain --target=web3-v1 ./abis/*.json --out-dir ./web3",
