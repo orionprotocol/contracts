@@ -2,3 +2,4 @@ node_modules
 web3/
 ethers/
 abis/*.d.ts
+lib/
