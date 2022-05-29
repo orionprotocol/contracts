@@ -1,6 +1,6 @@
 {
   "name": "@orionprotocol/contracts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Orion Protocol contracts typings",
   "scripts": {
     "test": "exit 0",
@@ -28,5 +28,10 @@
     "@typechain/web3-v1": "^6.0.0",
     "rimraf": "^3.0.2",
     "typechain": "^8.0.0"
-  }
+  },
+  "files": [
+    "./web3",
+    "./ethers",
+    "./abis"
+  ]
 }
