@@ -1,0 +1,33 @@
+{
+  "name": "@orionprotocol/contracts",
+  "version": "0.0.1",
+  "description": "Orion Protocol contracts typings",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf ./web3 && rimraf ./ethers",
+    "postinstall": "./prepare.sh",
+    "build": "npm run clean && npm run typechain:generate-types",
+    "typechain:generate-types": "npm run typechain:generate-ethers-v5-types && npm run typechain:generate-web3-v1-types",
+    "typechain:generate-ethers-v5-types": "typechain --target=ethers-v5 ./abis/*.json --out-dir ./ethers",
+    "typechain:generate-web3-v1-types": "typechain --target=web3-v1 ./abis/*.json --out-dir ./web3",
+    "postpublish": "npm run publish-npm",
+    "publish-npm": "npm publish --access public --ignore-scripts --@orionprotocol:registry='https://registry.npmjs.org'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orionprotocol/contracts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orionprotocol/contracts/issues"
+  },
+  "homepage": "https://github.com/orionprotocol/contracts#readme",
+  "devDependencies": {
+    "@typechain/ethers-v5": "^10.0.0",
+    "@typechain/web3-v1": "^6.0.0",
+    "rimraf": "^3.0.2",
+    "typechain": "^8.0.0"
+  }
+}
