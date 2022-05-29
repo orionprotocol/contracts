@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Orion Protocol contracts typings",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "exit 0",
     "clean": "rimraf ./web3 && rimraf ./ethers",
     "postinstall": "./prepare.sh",
     "build": "npm run clean && npm run typechain:generate-types",
