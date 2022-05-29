@@ -1,6 +1,6 @@
 {
   "name": "@orionprotocol/contracts",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Orion Protocol contracts typings",
   "scripts": {
     "test": "exit 0",
