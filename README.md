@@ -2,14 +2,14 @@
 
 ```ts
 // ethers
-import { Exchange__factory } from "@orionprotocol/contracts/ethers";
+import { Exchange__factory, ERC20__factory } from "@orionprotocol/contract";
 import { ethers } from "ethers";
 
-const ethers = new ethers.providers.StaticJsonRpcProvider(
+const provider = new ethers.providers.StaticJsonRpcProvider(
   "https://bsc-dataseed.binance.org/"
 );
 const exchangeContractAddress = "0xe9d1d2a27458378dd6c6f0b2c390807aed2217ca";
-const exchangeContract = ethersContracts.ethers.Exchange__factory.connect(
+const exchangeContract = Exchange__factory.connect(
   exchangeContractAddress,
   provider
 );
@@ -22,12 +22,14 @@ exchangeContract
   .then((howMuchORNOnDeadAddress) => {
     console.log(howMuchORNOnDeadAddress);
   });
+
+const erc20Contract = ERC20__factory.connect(tokenAddress, provider);
 ```
 
 ```ts
 // web3
 import Web3 from "web3";
-import { Exchange } from "@orionprotocol/contracts/web3";
+import { Web3Exchange } from "@orionprotocol/contracts/web3";
 import ExchangeContractABI from "@orionprotocol/contracts/abis/Exchange.json.d"; // "d" is make sense
 
 const web3 = new Web3("https://bsc-dataseed.binance.org/");
@@ -36,7 +38,7 @@ const exchangeContractAddress = "0xe9d1d2a27458378dd6c6f0b2c390807aed2217ca";
 const exchangeContract = new web3.eth.Contract(
   ExchangeContractABI,
   exchangeContractAddress
-) as unknown as Exchange;
+) as unknown as Web3Exchange;
 
 exchangeContract.methods
   .getBalance(
