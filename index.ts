@@ -15,4 +15,5 @@ export {
     OrionStakingReward as Web3OrionStakingReward,
     OrionVoting as Web3OrionVoting,
     PriceOracle as Web3PriceOracle,
+    PoolFunctionality as Web3PoolFunctionality,
 } from './web3';
