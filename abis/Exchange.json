@@ -1477,6 +1477,29 @@
     {
         "inputs": [
             {
+                "internalType": "uint112",
+                "name": "amount_spend",
+                "type": "uint112"
+            },
+            {
+                "internalType": "uint112",
+                "name": "amount_receive",
+                "type": "uint112"
+            },
+            {
+                "internalType": "address[]",
+                "name": "path",
+                "type": "address[]"
+            }
+        ],
+        "name": "swapThroughOrionPoolSupportingFee",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "internalType": "address",
                 "name": "newOwner",
                 "type": "address"
@@ -1679,5 +1702,9 @@
         "outputs": [],
         "stateMutability": "payable",
         "type": "function"
+    },
+    {
+        "stateMutability": "payable",
+        "type": "receive"
     }
 ]
