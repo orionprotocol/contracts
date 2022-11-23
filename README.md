@@ -30,7 +30,7 @@ const erc20Contract = ERC20__factory.connect(tokenAddress, provider);
 // web3
 import Web3 from "web3";
 import { Web3Exchange } from "@orionprotocol/contracts/web3";
-import ExchangeContractABI from "@orionprotocol/contracts/abis/Exchange.json.d"; // "d" is make sense
+import ExchangeContractABI from "@orionprotocol/contracts/abis/Exchange.json";
 
 const web3 = new Web3("https://bsc-dataseed.binance.org/");
 const exchangeContractAddress = "0xe9d1d2a27458378dd6c6f0b2c390807aed2217ca";
