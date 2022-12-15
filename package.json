@@ -1,6 +1,6 @@
 {
   "name": "@orionprotocol/contracts",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Orion Protocol contracts typings",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
