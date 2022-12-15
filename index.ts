@@ -16,4 +16,5 @@ export {
     OrionVoting as Web3OrionVoting,
     PriceOracle as Web3PriceOracle,
     PoolFunctionality as Web3PoolFunctionality,
+    CFD as Web3CFD,
 } from './web3';
