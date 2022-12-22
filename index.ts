@@ -17,4 +17,5 @@ export {
     PriceOracle as Web3PriceOracle,
     PoolFunctionality as Web3PoolFunctionality,
     CFD as Web3CFD,
+    EfficientPriceOracle as Web3EfficientPriceOracle,
 } from './web3';
