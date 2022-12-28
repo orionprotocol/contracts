@@ -28,9 +28,9 @@
       },
       {
         "indexed": false,
-        "internalType": "uint64",
+        "internalType": "uint80",
         "name": "positionPrice",
-        "type": "uint64"
+        "type": "uint80"
       },
       {
         "indexed": false,
@@ -40,6 +40,31 @@
       }
     ],
     "name": "AccountUpdate",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "collateral",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oracle",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "withdrawMarginLevel",
+        "type": "uint16"
+      }
+    ],
+    "name": "BasicParamsUpdate",
     "type": "event"
   },
   {
@@ -147,9 +172,9 @@
       },
       {
         "indexed": false,
-        "internalType": "uint64",
+        "internalType": "uint80",
         "name": "filledPrice",
-        "type": "uint64"
+        "type": "uint80"
       },
       {
         "indexed": false,
@@ -220,9 +245,9 @@
         "type": "address"
       },
       {
-        "internalType": "uint8",
+        "internalType": "uint16",
         "name": "marginLevel",
-        "type": "uint8"
+        "type": "uint16"
       }
     ],
     "name": "checkMargin",
@@ -394,9 +419,9 @@
         "type": "tuple"
       },
       {
-        "internalType": "uint64",
+        "internalType": "uint80",
         "name": "filledPrice",
-        "type": "uint64"
+        "type": "uint80"
       },
       {
         "internalType": "uint96",
@@ -505,9 +530,9 @@
         "type": "address"
       },
       {
-        "internalType": "uint64",
+        "internalType": "uint80",
         "name": "price",
-        "type": "uint64"
+        "type": "uint80"
       }
     ],
     "name": "getPNL",
@@ -596,9 +621,41 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "positionOwner",
-        "type": "address"
+        "components": [
+          {
+            "internalType": "address",
+            "name": "accountToLiquidate",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "liquidator",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "instrumentAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "expiration",
+            "type": "uint64"
+          },
+          {
+            "internalType": "int112",
+            "name": "position",
+            "type": "int112"
+          },
+          {
+            "internalType": "bytes",
+            "name": "signature",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct LibValidator.LiquidationOrder",
+        "name": "liquidationOrder",
+        "type": "tuple"
       }
     ],
     "name": "liquidatePosition",
@@ -669,11 +726,6 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "base",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
         "name": "collateral",
         "type": "address"
       },
@@ -681,6 +733,11 @@
         "internalType": "address",
         "name": "oracle",
         "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "withdrawMarginLevel",
+        "type": "uint16"
       }
     ],
     "name": "setBasicParams",
@@ -839,9 +896,9 @@
         "type": "int112"
       },
       {
-        "internalType": "uint64",
+        "internalType": "uint80",
         "name": "pos_avg_price",
-        "type": "uint64"
+        "type": "uint80"
       },
       {
         "internalType": "uint32",
@@ -873,6 +930,19 @@
     "name": "withdrawAsset",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "withdrawMarginLevel_",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   }
 ]
