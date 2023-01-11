@@ -491,6 +491,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "getAssetPrice",
+    "outputs": [
+      {
+        "internalType": "uint80",
+        "name": "price",
+        "type": "uint80"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
