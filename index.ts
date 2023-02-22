@@ -18,4 +18,8 @@ export {
     PoolFunctionality as Web3PoolFunctionality,
     CFD as Web3CFD,
     EfficientPriceOracle as Web3EfficientPriceOracle,
+    LiquidityGauge as Web3LiquidityGauge,
+    LiquidityGaugeReward as Web3LiquidityGaugeReward,
+    OrionGaugeControllerV2 as Web3OrionGaugeControllerV2,
+    VeORN as Web3VeORN,
 } from './web3';
