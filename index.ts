@@ -22,4 +22,5 @@ export {
     LiquidityGaugeReward as Web3LiquidityGaugeReward,
     OrionGaugeControllerV2 as Web3OrionGaugeControllerV2,
     VeORN as Web3VeORN,
+    OrionReferral as Web3OrionReferral,
 } from './web3';
