@@ -23,4 +23,5 @@ export {
     OrionGaugeControllerV2 as Web3OrionGaugeControllerV2,
     VeORN as Web3VeORN,
     OrionReferral as Web3OrionReferral,
+    VeORNYieldDistributorV4 as Web3VeORNYieldDistributorV4,
 } from './web3';
