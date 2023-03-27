@@ -1,6 +1,6 @@
 {
   "name": "@orionprotocol/contracts",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Orion Protocol contracts typings",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -26,10 +26,10 @@
   },
   "homepage": "https://github.com/orionprotocol/contracts#readme",
   "devDependencies": {
-    "@typechain/ethers-v5": "^10.0.0",
-    "@typechain/web3-v1": "^6.0.0",
-    "rimraf": "^3.0.2",
-    "typechain": "^8.0.0"
+    "@typechain/ethers-v5": "^10.2.0",
+    "@typechain/web3-v1": "^6.0.2",
+    "rimraf": "^4.4.1",
+    "typechain": "^8.1.1"
   },
   "files": [
     "*"
