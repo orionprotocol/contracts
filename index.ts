@@ -17,6 +17,7 @@ export {
     PriceOracle as Web3PriceOracle,
     PoolFunctionality as Web3PoolFunctionality,
     CFD as Web3CFD,
+    DelegateStorage as Web3DelegateStorage,
     EfficientPriceOracle as Web3EfficientPriceOracle,
     LiquidityGauge as Web3LiquidityGauge,
     LiquidityGaugeReward as Web3LiquidityGaugeReward,
