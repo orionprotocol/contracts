@@ -1,16 +1,15 @@
 {
   "name": "@orionprotocol/contracts",
-  "version": "0.8.0",
+  "version": "1.0.0",
   "description": "Orion Protocol contracts typings",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "exit 0",
-    "clean": "rimraf ./lib && rimraf ./web3 && rimraf ./ethers",
-    "build": "./prepare.sh && npm run clean && npm run typechain:generate-types && tsc",
-    "typechain:generate-types": "npm run typechain:generate-ethers-v5-types && npm run typechain:generate-web3-v1-types",
-    "typechain:generate-ethers-v5-types": "typechain --target=ethers-v5 ./abis/*.json --out-dir ./ethers",
-    "typechain:generate-web3-v1-types": "typechain --target=web3-v1 ./abis/*.json --out-dir ./web3",
+    "lerna": "lerna",
+    "typechain:all": "lerna run typechain",
+    "clean:all": "lerna run clean",
+    "prebuild": "npm run clean:all && npm run typechain:all",
+    "build": "./prepare.sh && tsc",
     "postpublish": "npm run publish-npm",
     "publish-npm": "npm publish --access public --ignore-scripts --@orionprotocol:registry='https://registry.npmjs.org'"
   },
@@ -18,20 +17,27 @@
     "type": "git",
     "url": "git+https://github.com/orionprotocol/contracts.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "orion",
+    "protocol",
+    "contracts",
+    "typescript",
+    "typed"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/orionprotocol/contracts/issues"
   },
   "homepage": "https://github.com/orionprotocol/contracts#readme",
   "devDependencies": {
-    "@typechain/ethers-v5": "^10.2.0",
-    "@typechain/web3-v1": "^6.0.2",
-    "rimraf": "^4.4.1",
+    "lerna": "^6.6.1",
+    "rimraf": "^5.0.0",
     "typechain": "^8.1.1"
   },
   "files": [
     "*"
+  ],
+  "workspaces": [
+    "packages/*"
   ]
 }

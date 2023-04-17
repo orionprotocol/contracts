@@ -1,29 +1,3 @@
-export * from './ethers';
-export {
-    StakingRewardsWithLongTermBonus as Web3StakingRewardsWithLongTermBonus,
-    CustomStakingReward as Web3CustomStakingReward,
-    ERC20 as Web3ERC20,
-    Exchange as Web3Exchange,
-    IDOCollector as Web3IDOCollector,
-    IDODistributor as Web3IDODistributor,
-    IUniswapV2Pair as Web3IUniswapV2Pair,
-    IUniswapV2Router as Web3IUniswapV2Router,
-    LiquidityMigrator as Web3LiquidityMigrator,
-    OrionGovernance as Web3OrionGovernance,
-    OrionMigrator as Web3OrionMigrator,
-    OrionPoolV2Factory as Web3OrionPoolV2Factory,
-    OrionStakingReward as Web3OrionStakingReward,
-    OrionVoting as Web3OrionVoting,
-    PriceOracle as Web3PriceOracle,
-    PoolFunctionality as Web3PoolFunctionality,
-    CFD as Web3CFD,
-    DelegateStorage as Web3DelegateStorage,
-    EfficientPriceOracle as Web3EfficientPriceOracle,
-    LiquidityGauge as Web3LiquidityGauge,
-    LiquidityGaugeReward as Web3LiquidityGaugeReward,
-    OrionGaugeControllerV2 as Web3OrionGaugeControllerV2,
-    VeORN as Web3VeORN,
-    OrionReferral as Web3OrionReferral,
-    VeORNYieldDistributorV4 as Web3VeORNYieldDistributorV4,
-    OrionUnifiedFarm_ERC20 as Web3OrionUnifiedFarm_ERC20,
-} from './web3';
+export * as ethersV5 from './packages/ethers-v5/typed_contracts';
+export * as ethersV6 from './packages/ethers-v6/typed_contracts';
+export * as web3 from './packages/web3/typed_contracts';

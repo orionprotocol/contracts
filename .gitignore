@@ -1,5 +1,5 @@
-node_modules
-web3/
-ethers/
+/**/node_modules
+/**/typed_contracts
+
 abis/*.d.ts
 lib/
