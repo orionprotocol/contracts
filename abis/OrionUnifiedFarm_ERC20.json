@@ -321,13 +321,6 @@
   },
   {
     "inputs": [],
-    "name": "fraxPerLPToken",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "getAllRewardTokens",
     "outputs": [
       { "internalType": "address[]", "name": "", "type": "address[]" }
@@ -561,27 +554,9 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
-    ],
-    "name": "maxLPForMaxBoost",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
+      { "internalType": "uint256", "name": "stakeAmount", "type": "uint256" }
     ],
     "name": "minVeORNForMaxBoost",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "proxy_address", "type": "address" }
-    ],
-    "name": "minVeORNForMaxBoostProxy",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
@@ -612,15 +587,6 @@
   {
     "inputs": [],
     "name": "periodFinish",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "proxy_address", "type": "address" }
-    ],
-    "name": "proxyStakedOrion",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
@@ -699,9 +665,9 @@
   {
     "inputs": [
       {
-        "internalType": "uint256[6]",
+        "internalType": "uint256[5]",
         "name": "_misc_vars",
-        "type": "uint256[6]"
+        "type": "uint256[5]"
       }
     ],
     "name": "setMiscVariables",
@@ -845,11 +811,11 @@
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
+    "inputs": [],
+    "name": "veORN",
+    "outputs": [
+      { "internalType": "contract IveORN", "name": "", "type": "address" }
     ],
-    "name": "userStakedOrion",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -878,13 +844,6 @@
   {
     "inputs": [],
     "name": "veorn_max_multiplier",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "veorn_per_frax_for_max_boost",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
