@@ -26,4 +26,5 @@ export {
     OrionReferral as Web3OrionReferral,
     VeORNYieldDistributorV4 as Web3VeORNYieldDistributorV4,
     OrionUnifiedFarm_ERC20 as Web3OrionUnifiedFarm_ERC20,
+    OrionV3Factory as Web3OrionV3Factory,
 } from './web3';
