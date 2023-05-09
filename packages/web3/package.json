@@ -1,0 +1,12 @@
+{
+  "name": "@orionprotocol/contracts-web3",
+  "main": "typed_contracts/index.ts",
+  "scripts": {
+    "clean": "rimraf ./*.ts",
+    "typechain": "typechain --target=web3-v1 ../../abis/*.json --out-dir ."
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@typechain/web3-v1": "^6.0.2"
+  }
+}
