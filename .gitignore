@@ -1,5 +1,11 @@
 /**/node_modules
-/**/typed_contracts
 
 abis/*.d.ts
+
+**/*.tgz
+
+packages/*
+
+!packages/package.json
+
 lib/

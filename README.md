@@ -1,8 +1,11 @@
 # Examples
 
 ```ts
-// ethers
-import { Exchange__factory, ERC20__factory } from "@orionprotocol/contract";
+// ethers V5
+import {
+  Exchange__factory,
+  ERC20__factory,
+} from "@orionprotocol/contracts/lib/ethers-v5";
 import { ethers } from "ethers";
 
 const provider = new ethers.providers.StaticJsonRpcProvider(
@@ -29,7 +32,7 @@ const erc20Contract = ERC20__factory.connect(tokenAddress, provider);
 ```ts
 // web3
 import Web3 from "web3";
-import { Web3Exchange } from "@orionprotocol/contracts/web3";
+import { Exchange } from "@orionprotocol/contracts/lib/web3";
 import ExchangeContractABI from "@orionprotocol/contracts/abis/Exchange.json";
 
 const web3 = new Web3("https://bsc-dataseed.binance.org/");
@@ -38,7 +41,7 @@ const exchangeContractAddress = "0xe9d1d2a27458378dd6c6f0b2c390807aed2217ca";
 const exchangeContract = new web3.eth.Contract(
   ExchangeContractABI,
   exchangeContractAddress
-) as unknown as Web3Exchange;
+) as unknown as Exchange;
 
 exchangeContract.methods
   .getBalance(

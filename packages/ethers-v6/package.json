@@ -2,8 +2,8 @@
   "name": "@orionprotocol/contracts-ethers-v6",
   "main": "typed_contracts/index.ts",
   "scripts": {
-    "clean": "rimraf typed_contracts",
-    "typechain": "typechain --target=ethers-v6 ../../abis/*.json --out-dir ./typed_contracts"
+    "clean": "rimraf ./*.ts && rimraf ./factories",
+    "typechain": "typechain --target=ethers-v6 ../../abis/*.json --out-dir ."
   },
   "license": "MIT",
   "dependencies": {
