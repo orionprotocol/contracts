@@ -1,13 +1,13 @@
 {
   "name": "@orionprotocol/contracts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Orion Protocol contracts typings",
   "scripts": {
     "lerna": "lerna",
     "typechain:all": "lerna run typechain",
     "clean:all": "lerna run clean",
     "prebuild": "npm run clean:all && npm run typechain:all",
-    "build": "./prepare.sh",
+    "build": "./prepare.sh && tsc",
     "postpublish": "npm run publish-npm",
     "publish-npm": "npm publish --access public --ignore-scripts --@orionprotocol:registry='https://registry.npmjs.org'"
   },
