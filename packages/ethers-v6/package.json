@@ -7,6 +7,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@typechain/ethers-v6": "^0.3.0"
+    "@typechain/ethers-v6": "^0.3.1"
   }
 }
