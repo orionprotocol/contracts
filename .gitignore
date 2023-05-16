@@ -4,8 +4,6 @@ abis/*.d.ts
 
 **/*.tgz
 
-packages/*
-
-!packages/package.json
+packages/**/*.ts
 
 lib/

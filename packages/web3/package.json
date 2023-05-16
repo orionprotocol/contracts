@@ -1,6 +1,6 @@
 {
   "name": "@orionprotocol/contracts-web3",
-  "main": "typed_contracts/index.ts",
+  "main": "index.ts",
   "scripts": {
     "clean": "rimraf ./*.ts",
     "typechain": "typechain --target=web3-v1 ../../abis/*.json --out-dir ."
