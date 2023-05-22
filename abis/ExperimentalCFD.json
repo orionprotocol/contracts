@@ -219,6 +219,30 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "activeInstruments",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
@@ -606,6 +630,25 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "getActiveInstruments",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "index",
         "type": "uint256"
@@ -662,9 +705,9 @@
     "name": "getAssetPrice",
     "outputs": [
       {
-        "internalType": "uint80",
+        "internalType": "int112",
         "name": "price",
-        "type": "uint80"
+        "type": "int112"
       }
     ],
     "stateMutability": "view",
@@ -739,9 +782,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "uint80",
+        "internalType": "int112",
         "name": "price",
-        "type": "uint80"
+        "type": "int112"
       }
     ],
     "name": "getPNL",
@@ -798,6 +841,62 @@
     "name": "initialize",
     "outputs": [],
     "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "instrumentInfo",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "leverage",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "soLevel",
+        "type": "uint8"
+      },
+      {
+        "components": [
+          {
+            "internalType": "int40",
+            "name": "frLong",
+            "type": "int40"
+          },
+          {
+            "internalType": "int40",
+            "name": "frShort",
+            "type": "int40"
+          },
+          {
+            "internalType": "int72",
+            "name": "longFRStored",
+            "type": "int72"
+          },
+          {
+            "internalType": "int72",
+            "name": "shortFRStored",
+            "type": "int72"
+          },
+          {
+            "internalType": "uint32",
+            "name": "lastFRUpdateTime",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct CFD.FundingRateInfo",
+        "name": "fundingRateInfo",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
