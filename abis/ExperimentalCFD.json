@@ -1,7 +1,22 @@
 [
   {
     "inputs": [],
+    "name": "DelegateDoesNotExist",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "DiffirentInstrumentIndexes",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "InstrumentDoesNotExist",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InsufficientMargin",
     "type": "error"
   },
   {
@@ -486,11 +501,6 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "index",
-        "type": "uint256"
-      },
-      {
         "components": [
           {
             "internalType": "address",
@@ -528,9 +538,9 @@
             "type": "uint64"
           },
           {
-            "internalType": "address",
-            "name": "instrumentAddress",
-            "type": "address"
+            "internalType": "uint16",
+            "name": "instrumentIndex",
+            "type": "uint16"
           },
           {
             "internalType": "uint8",
@@ -543,17 +553,12 @@
             "type": "bool"
           },
           {
-            "internalType": "bool",
-            "name": "isPersonalSign",
-            "type": "bool"
-          },
-          {
             "internalType": "bytes",
             "name": "signature",
             "type": "bytes"
           }
         ],
-        "internalType": "struct LibValidator.Order",
+        "internalType": "struct LibValidatorMultiCFD.Order",
         "name": "buyOrder",
         "type": "tuple"
       },
@@ -595,9 +600,9 @@
             "type": "uint64"
           },
           {
-            "internalType": "address",
-            "name": "instrumentAddress",
-            "type": "address"
+            "internalType": "uint16",
+            "name": "instrumentIndex",
+            "type": "uint16"
           },
           {
             "internalType": "uint8",
@@ -610,17 +615,12 @@
             "type": "bool"
           },
           {
-            "internalType": "bool",
-            "name": "isPersonalSign",
-            "type": "bool"
-          },
-          {
             "internalType": "bytes",
             "name": "signature",
             "type": "bytes"
           }
         ],
-        "internalType": "struct LibValidator.Order",
+        "internalType": "struct LibValidatorMultiCFD.Order",
         "name": "sellOrder",
         "type": "tuple"
       },
@@ -947,11 +947,6 @@
             "type": "address"
           },
           {
-            "internalType": "address",
-            "name": "instrumentAddress",
-            "type": "address"
-          },
-          {
             "internalType": "uint64",
             "name": "expiration",
             "type": "uint64"
@@ -967,7 +962,7 @@
             "type": "bytes"
           }
         ],
-        "internalType": "struct LibValidator.LiquidationOrder",
+        "internalType": "struct LibValidatorMultiCFD.LiquidationOrder",
         "name": "liquidationOrder",
         "type": "tuple"
       }
