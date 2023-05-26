@@ -11,6 +11,16 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectOrder",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectSenderAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "InstrumentDoesNotExist",
     "type": "error"
   },
@@ -20,12 +30,27 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "NotApprovedMatcher",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SufficientMargin",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WithdrawMoreThanBalance",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
         "indexed": true,
         "internalType": "address",
-        "name": "user",
+        "name": "account",
         "type": "address"
       },
       {
@@ -36,30 +61,18 @@
       },
       {
         "indexed": false,
-        "internalType": "int112",
-        "name": "position",
-        "type": "int112"
+        "internalType": "uint256",
+        "name": "liquidationFee",
+        "type": "uint256"
       },
       {
         "indexed": false,
-        "internalType": "enum CFD.UpdateReason",
-        "name": "reason",
-        "type": "uint8"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint80",
-        "name": "positionPrice",
-        "type": "uint80"
-      },
-      {
-        "indexed": false,
-        "internalType": "int112",
-        "name": "fundingRate",
-        "type": "int112"
+        "internalType": "uint256[]",
+        "name": "liquidatedInstruments",
+        "type": "uint256[]"
       }
     ],
-    "name": "AccountUpdate",
+    "name": "AccountLiquidated",
     "type": "event"
   },
   {
@@ -73,12 +86,62 @@
       },
       {
         "indexed": false,
+        "internalType": "address",
+        "name": "delegateStorage",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "soLevel",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
         "internalType": "uint16",
         "name": "withdrawMarginLevel",
         "type": "uint16"
       }
     ],
     "name": "BasicParamsUpdate",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "int112",
+        "name": "soLevel",
+        "type": "int112"
+      }
+    ],
+    "name": "CustomStopOutLevelUpdate",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "int112",
+        "name": "amount",
+        "type": "int112"
+      },
+      {
+        "indexed": false,
+        "internalType": "int112",
+        "name": "finalBalance",
+        "type": "int112"
+      }
+    ],
+    "name": "DepositBalanceChanged",
     "type": "event"
   },
   {
@@ -105,9 +168,9 @@
       },
       {
         "indexed": false,
-        "internalType": "string[5]",
+        "internalType": "string[12]",
         "name": "ticker",
-        "type": "string[5]"
+        "type": "string[12]"
       },
       {
         "indexed": false,
@@ -116,41 +179,41 @@
         "type": "uint8"
       }
     ],
-    "name": "InstumentUpdate",
+    "name": "InstrumentUpdate",
     "type": "event"
   },
   {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "internalType": "int256",
-        "name": "long",
-        "type": "int256"
-      },
-      {
-        "indexed": false,
-        "internalType": "int256",
-        "name": "short",
-        "type": "int256"
-      },
-      {
-        "indexed": false,
-        "internalType": "int256",
-        "name": "long_fr_stored",
-        "type": "int256"
-      },
-      {
-        "indexed": false,
-        "internalType": "int256",
-        "name": "short_fr_stored",
-        "type": "int256"
-      },
-      {
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256",
-        "name": "last_fr_price_update_time",
+        "name": "index",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "int48",
+        "name": "frLongPerSecond",
+        "type": "int48"
+      },
+      {
+        "indexed": false,
+        "internalType": "int48",
+        "name": "frShortPerSecond",
+        "type": "int48"
+      },
+      {
+        "indexed": false,
+        "internalType": "int72",
+        "name": "longFRStored",
+        "type": "int72"
+      },
+      {
+        "indexed": false,
+        "internalType": "int72",
+        "name": "shortFRStored",
+        "type": "int72"
       }
     ],
     "name": "NewFundingRate",
@@ -159,6 +222,12 @@
   {
     "anonymous": false,
     "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      },
       {
         "indexed": true,
         "internalType": "address",
@@ -210,7 +279,13 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
         "internalType": "address",
         "name": "account",
         "type": "address"
@@ -218,11 +293,29 @@
       {
         "indexed": false,
         "internalType": "int112",
-        "name": "soLevel",
+        "name": "balance",
+        "type": "int112"
+      },
+      {
+        "indexed": false,
+        "internalType": "int112",
+        "name": "position",
+        "type": "int112"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint80",
+        "name": "avgPositionPrice",
+        "type": "uint80"
+      },
+      {
+        "indexed": false,
+        "internalType": "int112",
+        "name": "accumulatedFundingRate",
         "type": "int112"
       }
     ],
-    "name": "customStopOutLevelUpdate",
+    "name": "PositionUpdate",
     "type": "event"
   },
   {
@@ -276,9 +369,9 @@
   {
     "inputs": [
       {
-        "internalType": "string[5]",
+        "internalType": "string[12]",
         "name": "ticker",
-        "type": "string[5]"
+        "type": "string[12]"
       },
       {
         "internalType": "uint8",
@@ -376,9 +469,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "string[5]",
+        "internalType": "string[12]",
         "name": "ticker",
-        "type": "string[5]"
+        "type": "string[12]"
       },
       {
         "internalType": "uint8",
@@ -776,14 +869,14 @@
       {
         "components": [
           {
-            "internalType": "string[5]",
-            "name": "ticker",
-            "type": "string[5]"
-          },
-          {
             "internalType": "uint8",
             "name": "leverage",
             "type": "uint8"
+          },
+          {
+            "internalType": "string[12]",
+            "name": "ticker",
+            "type": "string[12]"
           },
           {
             "components": [
@@ -952,11 +1045,6 @@
             "type": "uint64"
           },
           {
-            "internalType": "int112",
-            "name": "position",
-            "type": "int112"
-          },
-          {
             "internalType": "bytes",
             "name": "signature",
             "type": "bytes"
@@ -1070,6 +1158,11 @@
         "internalType": "uint16",
         "name": "withdrawMarginLevel_",
         "type": "uint16"
+      },
+      {
+        "internalType": "uint8",
+        "name": "soLevel_",
+        "type": "uint8"
       }
     ],
     "name": "setBasicParams",
