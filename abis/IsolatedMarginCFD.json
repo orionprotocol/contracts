@@ -37,6 +37,18 @@
         "internalType": "int112",
         "name": "fundingRate",
         "type": "int112"
+      },
+      {
+        "indexed": false,
+        "internalType": "int112",
+        "name": "realizedPNL",
+        "type": "int112"
+      },
+      {
+        "indexed": false,
+        "internalType": "int112",
+        "name": "realizedFR",
+        "type": "int112"
       }
     ],
     "name": "AccountUpdate",
@@ -45,12 +57,6 @@
   {
     "anonymous": false,
     "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "collateral",
-        "type": "address"
-      },
       {
         "indexed": false,
         "internalType": "address",
@@ -318,6 +324,42 @@
       }
     ],
     "name": "depositAsset",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint112",
+        "name": "amount",
+        "type": "uint112"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      }
+    ],
+    "name": "depositAssetTo",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "cfdContract",
+        "type": "address"
+      },
+      {
+        "internalType": "uint112",
+        "name": "amount",
+        "type": "uint112"
+      }
+    ],
+    "name": "depositAssetToAnotherCFD",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -617,9 +659,9 @@
     "name": "getPriceIndex",
     "outputs": [
       {
-        "internalType": "uint8",
+        "internalType": "uint256",
         "name": "",
-        "type": "uint8"
+        "type": "uint256"
       }
     ],
     "stateMutability": "pure",
@@ -665,7 +707,13 @@
     "type": "function"
   },
   {
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "collateral",
+        "type": "address"
+      }
+    ],
     "name": "initialize",
     "outputs": [],
     "stateMutability": "payable",
@@ -803,11 +851,6 @@
   },
   {
     "inputs": [
-      {
-        "internalType": "address",
-        "name": "collateral",
-        "type": "address"
-      },
       {
         "internalType": "address",
         "name": "oracle",
@@ -1056,6 +1099,24 @@
       }
     ],
     "name": "withdrawAsset",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint112",
+        "name": "amount",
+        "type": "uint112"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      }
+    ],
+    "name": "withdrawAssetTo",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
