@@ -22,6 +22,11 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectInstrumentIndexes",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "IncorrectOrder",
     "type": "error"
   },
@@ -42,12 +47,27 @@
   },
   {
     "inputs": [],
+    "name": "LiquidationOfPositionInProfit",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "MaxOpenPositionsExceeded",
     "type": "error"
   },
   {
     "inputs": [],
+    "name": "NegativeEquityAfterLiquidation",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "NotApprovedMatcher",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PriceOfLiquidatedInstrumentNotFirst",
     "type": "error"
   },
   {
@@ -71,21 +91,33 @@
       },
       {
         "indexed": false,
+        "internalType": "uint256",
+        "name": "liquidatedInstrument",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint112",
+        "name": "liquidationFee",
+        "type": "uint112"
+      },
+      {
+        "indexed": false,
         "internalType": "int112",
         "name": "balance",
         "type": "int112"
       },
       {
         "indexed": false,
-        "internalType": "uint256",
-        "name": "liquidationFee",
-        "type": "uint256"
+        "internalType": "int112",
+        "name": "realizedPNL",
+        "type": "int112"
       },
       {
         "indexed": false,
-        "internalType": "uint256[]",
-        "name": "liquidatedInstruments",
-        "type": "uint256[]"
+        "internalType": "int112",
+        "name": "realizedFR",
+        "type": "int112"
       }
     ],
     "name": "AccountLiquidated",
@@ -341,6 +373,18 @@
         "internalType": "int112",
         "name": "accumulatedFundingRate",
         "type": "int112"
+      },
+      {
+        "indexed": false,
+        "internalType": "int112",
+        "name": "realizedPNL",
+        "type": "int112"
+      },
+      {
+        "indexed": false,
+        "internalType": "int112",
+        "name": "realizedFR",
+        "type": "int112"
       }
     ],
     "name": "PositionUpdate",
@@ -431,24 +475,61 @@
         "internalType": "address",
         "name": "account",
         "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "index",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint80",
+            "name": "price",
+            "type": "uint80"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct LibValidatorMultiCFD.PriceInfo[]",
+        "name": "prices",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "bool",
+        "name": "checkPrices",
+        "type": "bool"
       }
     ],
     "name": "calculateMarginLevel",
     "outputs": [
       {
         "internalType": "int112",
-        "name": "",
+        "name": "marginLevel",
         "type": "int112"
       },
       {
         "internalType": "int112",
-        "name": "",
+        "name": "equity",
         "type": "int112"
       },
       {
         "internalType": "int112",
-        "name": "",
+        "name": "margin",
         "type": "int112"
+      },
+      {
+        "internalType": "int112[]",
+        "name": "pnls",
+        "type": "int112[]"
+      },
+      {
+        "internalType": "int112[]",
+        "name": "frs",
+        "type": "int112[]"
       }
     ],
     "stateMutability": "view",
@@ -500,7 +581,7 @@
         "type": "int112"
       }
     ],
-    "name": "checkMargin",
+    "name": "checkMarginWithOraclePrices",
     "outputs": [
       {
         "internalType": "bool",
@@ -599,14 +680,14 @@
             "type": "address"
           },
           {
-            "internalType": "uint64",
+            "internalType": "uint96",
             "name": "amount",
-            "type": "uint64"
+            "type": "uint96"
           },
           {
-            "internalType": "uint64",
+            "internalType": "uint80",
             "name": "price",
-            "type": "uint64"
+            "type": "uint80"
           },
           {
             "internalType": "uint64",
@@ -614,14 +695,14 @@
             "type": "uint64"
           },
           {
-            "internalType": "uint64",
-            "name": "expiration",
-            "type": "uint64"
-          },
-          {
             "internalType": "uint16",
             "name": "instrumentIndex",
             "type": "uint16"
+          },
+          {
+            "internalType": "uint64",
+            "name": "expiration",
+            "type": "uint64"
           },
           {
             "internalType": "uint8",
@@ -656,14 +737,14 @@
             "type": "address"
           },
           {
-            "internalType": "uint64",
+            "internalType": "uint96",
             "name": "amount",
-            "type": "uint64"
+            "type": "uint96"
           },
           {
-            "internalType": "uint64",
+            "internalType": "uint80",
             "name": "price",
-            "type": "uint64"
+            "type": "uint80"
           },
           {
             "internalType": "uint64",
@@ -671,14 +752,14 @@
             "type": "uint64"
           },
           {
-            "internalType": "uint64",
-            "name": "expiration",
-            "type": "uint64"
-          },
-          {
             "internalType": "uint16",
             "name": "instrumentIndex",
             "type": "uint16"
+          },
+          {
+            "internalType": "uint64",
+            "name": "expiration",
+            "type": "uint64"
           },
           {
             "internalType": "uint8",
@@ -772,7 +853,7 @@
         "type": "address"
       }
     ],
-    "name": "getActiveInstruments",
+    "name": "getActiveInstrumentsIndexes",
     "outputs": [
       {
         "internalType": "uint256[]",
@@ -786,23 +867,13 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "offset",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "limit",
-        "type": "uint256"
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
       }
     ],
-    "name": "getActivePositions",
+    "name": "getActiveInstrumentsPositions",
     "outputs": [
-      {
-        "internalType": "address[]",
-        "name": "accounts",
-        "type": "address[]"
-      },
       {
         "components": [
           {
@@ -836,9 +907,9 @@
             "type": "int72"
           }
         ],
-        "internalType": "struct CFD.PositionInfo[][]",
+        "internalType": "struct CFD.PositionInfo[]",
         "name": "positions",
-        "type": "tuple[][]"
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
@@ -934,6 +1005,74 @@
         "internalType": "struct CFD.InstrumentInfo",
         "name": "",
         "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "offset",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "limit",
+        "type": "uint256"
+      }
+    ],
+    "name": "getOpenPositions",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+          },
+          {
+            "components": [
+              {
+                "internalType": "int112",
+                "name": "position",
+                "type": "int112"
+              },
+              {
+                "internalType": "int112",
+                "name": "frAccumulated",
+                "type": "int112"
+              },
+              {
+                "internalType": "uint32",
+                "name": "positionLastUpdate",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint80",
+                "name": "positionAvgPrice",
+                "type": "uint80"
+              },
+              {
+                "internalType": "int72",
+                "name": "positionLongFRStored",
+                "type": "int72"
+              },
+              {
+                "internalType": "int72",
+                "name": "positionShortFRStored",
+                "type": "int72"
+              }
+            ],
+            "internalType": "struct CFD.PositionInfo[]",
+            "name": "positions",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct CFD.AccountPositions[]",
+        "name": "positions",
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
@@ -1083,6 +1222,33 @@
             "internalType": "address",
             "name": "liquidator",
             "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "index",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "index",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint80",
+                "name": "price",
+                "type": "uint80"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct LibValidatorMultiCFD.PriceInfo[]",
+            "name": "prices",
+            "type": "tuple[]"
           },
           {
             "internalType": "uint64",
@@ -1270,19 +1436,6 @@
       }
     ],
     "name": "setFR",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "senderOverride",
-        "type": "address"
-      }
-    ],
-    "name": "setSenderOverride",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
