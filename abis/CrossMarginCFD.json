@@ -487,11 +487,6 @@
             "internalType": "uint80",
             "name": "price",
             "type": "uint80"
-          },
-          {
-            "internalType": "uint64",
-            "name": "timestamp",
-            "type": "uint64"
           }
         ],
         "internalType": "struct LibValidatorMultiCFD.PriceInfo[]",
@@ -680,6 +675,11 @@
             "type": "address"
           },
           {
+            "internalType": "uint16",
+            "name": "instrumentIndex",
+            "type": "uint16"
+          },
+          {
             "internalType": "uint96",
             "name": "amount",
             "type": "uint96"
@@ -695,14 +695,9 @@
             "type": "uint64"
           },
           {
-            "internalType": "uint16",
-            "name": "instrumentIndex",
-            "type": "uint16"
-          },
-          {
-            "internalType": "uint64",
+            "internalType": "uint32",
             "name": "expiration",
-            "type": "uint64"
+            "type": "uint32"
           },
           {
             "internalType": "uint8",
@@ -737,6 +732,11 @@
             "type": "address"
           },
           {
+            "internalType": "uint16",
+            "name": "instrumentIndex",
+            "type": "uint16"
+          },
+          {
             "internalType": "uint96",
             "name": "amount",
             "type": "uint96"
@@ -752,14 +752,9 @@
             "type": "uint64"
           },
           {
-            "internalType": "uint16",
-            "name": "instrumentIndex",
-            "type": "uint16"
-          },
-          {
-            "internalType": "uint64",
+            "internalType": "uint32",
             "name": "expiration",
-            "type": "uint64"
+            "type": "uint32"
           },
           {
             "internalType": "uint8",
@@ -795,6 +790,19 @@
     "name": "fillOrders",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fundingRateAccount",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -874,6 +882,11 @@
     ],
     "name": "getActiveInstrumentsPositions",
     "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "indexes",
+        "type": "uint256[]"
+      },
       {
         "components": [
           {
@@ -1239,11 +1252,6 @@
                 "internalType": "uint80",
                 "name": "price",
                 "type": "uint80"
-              },
-              {
-                "internalType": "uint64",
-                "name": "timestamp",
-                "type": "uint64"
               }
             ],
             "internalType": "struct LibValidatorMultiCFD.PriceInfo[]",
@@ -1251,9 +1259,14 @@
             "type": "tuple[]"
           },
           {
-            "internalType": "uint64",
+            "internalType": "uint32",
+            "name": "liquidationTimestamp",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
             "name": "expiration",
-            "type": "uint64"
+            "type": "uint32"
           },
           {
             "internalType": "bytes",
