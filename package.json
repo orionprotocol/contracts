@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/orionprotocol/contracts#readme",
   "devDependencies": {
-    "lerna": "6.6.2",
+    "lerna": "^7.0.2",
     "rimraf": "^5.0.0",
     "typechain": "^8.1.1"
   },
