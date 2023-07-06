@@ -477,23 +477,6 @@
         "type": "address"
       },
       {
-        "components": [
-          {
-            "internalType": "uint64",
-            "name": "index",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint80",
-            "name": "price",
-            "type": "uint80"
-          }
-        ],
-        "internalType": "struct LibValidatorMultiCFD.PriceInfo[]",
-        "name": "prices",
-        "type": "tuple[]"
-      },
-      {
         "internalType": "bool",
         "name": "checkPrices",
         "type": "bool"
@@ -663,120 +646,6 @@
   {
     "inputs": [
       {
-        "components": [
-          {
-            "internalType": "address",
-            "name": "senderAddress",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "matcherAddress",
-            "type": "address"
-          },
-          {
-            "internalType": "uint16",
-            "name": "instrumentIndex",
-            "type": "uint16"
-          },
-          {
-            "internalType": "uint96",
-            "name": "amount",
-            "type": "uint96"
-          },
-          {
-            "internalType": "uint80",
-            "name": "price",
-            "type": "uint80"
-          },
-          {
-            "internalType": "uint64",
-            "name": "matcherFee",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint32",
-            "name": "expiration",
-            "type": "uint32"
-          },
-          {
-            "internalType": "uint8",
-            "name": "buySide",
-            "type": "uint8"
-          },
-          {
-            "internalType": "bool",
-            "name": "isFromDelegate",
-            "type": "bool"
-          },
-          {
-            "internalType": "bytes",
-            "name": "signature",
-            "type": "bytes"
-          }
-        ],
-        "internalType": "struct LibValidatorMultiCFD.Order",
-        "name": "buyOrder",
-        "type": "tuple"
-      },
-      {
-        "components": [
-          {
-            "internalType": "address",
-            "name": "senderAddress",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "matcherAddress",
-            "type": "address"
-          },
-          {
-            "internalType": "uint16",
-            "name": "instrumentIndex",
-            "type": "uint16"
-          },
-          {
-            "internalType": "uint96",
-            "name": "amount",
-            "type": "uint96"
-          },
-          {
-            "internalType": "uint80",
-            "name": "price",
-            "type": "uint80"
-          },
-          {
-            "internalType": "uint64",
-            "name": "matcherFee",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint32",
-            "name": "expiration",
-            "type": "uint32"
-          },
-          {
-            "internalType": "uint8",
-            "name": "buySide",
-            "type": "uint8"
-          },
-          {
-            "internalType": "bool",
-            "name": "isFromDelegate",
-            "type": "bool"
-          },
-          {
-            "internalType": "bytes",
-            "name": "signature",
-            "type": "bytes"
-          }
-        ],
-        "internalType": "struct LibValidatorMultiCFD.Order",
-        "name": "sellOrder",
-        "type": "tuple"
-      },
-      {
         "internalType": "uint80",
         "name": "filledPrice",
         "type": "uint80"
@@ -886,43 +755,6 @@
         "internalType": "uint256[]",
         "name": "indexes",
         "type": "uint256[]"
-      },
-      {
-        "components": [
-          {
-            "internalType": "int112",
-            "name": "position",
-            "type": "int112"
-          },
-          {
-            "internalType": "int112",
-            "name": "frAccumulated",
-            "type": "int112"
-          },
-          {
-            "internalType": "uint32",
-            "name": "positionLastUpdate",
-            "type": "uint32"
-          },
-          {
-            "internalType": "uint80",
-            "name": "positionAvgPrice",
-            "type": "uint80"
-          },
-          {
-            "internalType": "int72",
-            "name": "positionLongFRStored",
-            "type": "int72"
-          },
-          {
-            "internalType": "int72",
-            "name": "positionShortFRStored",
-            "type": "int72"
-          }
-        ],
-        "internalType": "struct CFD.PositionInfo[]",
-        "name": "positions",
-        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
@@ -969,57 +801,6 @@
       }
     ],
     "name": "getInstrumentInfo",
-    "outputs": [
-      {
-        "components": [
-          {
-            "internalType": "uint8",
-            "name": "leverage",
-            "type": "uint8"
-          },
-          {
-            "internalType": "string[12]",
-            "name": "ticker",
-            "type": "string[12]"
-          },
-          {
-            "components": [
-              {
-                "internalType": "int40",
-                "name": "frLong",
-                "type": "int40"
-              },
-              {
-                "internalType": "int40",
-                "name": "frShort",
-                "type": "int40"
-              },
-              {
-                "internalType": "int72",
-                "name": "longFRStored",
-                "type": "int72"
-              },
-              {
-                "internalType": "int72",
-                "name": "shortFRStored",
-                "type": "int72"
-              },
-              {
-                "internalType": "uint32",
-                "name": "lastFRUpdateTime",
-                "type": "uint32"
-              }
-            ],
-            "internalType": "struct CFD.FundingRateInfo",
-            "name": "fundingRateInfo",
-            "type": "tuple"
-          }
-        ],
-        "internalType": "struct CFD.InstrumentInfo",
-        "name": "",
-        "type": "tuple"
-      }
-    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -1037,57 +818,6 @@
       }
     ],
     "name": "getOpenPositions",
-    "outputs": [
-      {
-        "components": [
-          {
-            "internalType": "address",
-            "name": "account",
-            "type": "address"
-          },
-          {
-            "components": [
-              {
-                "internalType": "int112",
-                "name": "position",
-                "type": "int112"
-              },
-              {
-                "internalType": "int112",
-                "name": "frAccumulated",
-                "type": "int112"
-              },
-              {
-                "internalType": "uint32",
-                "name": "positionLastUpdate",
-                "type": "uint32"
-              },
-              {
-                "internalType": "uint80",
-                "name": "positionAvgPrice",
-                "type": "uint80"
-              },
-              {
-                "internalType": "int72",
-                "name": "positionLongFRStored",
-                "type": "int72"
-              },
-              {
-                "internalType": "int72",
-                "name": "positionShortFRStored",
-                "type": "int72"
-              }
-            ],
-            "internalType": "struct CFD.PositionInfo[]",
-            "name": "positions",
-            "type": "tuple[]"
-          }
-        ],
-        "internalType": "struct CFD.AccountPositions[]",
-        "name": "positions",
-        "type": "tuple[]"
-      }
-    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -1223,62 +953,7 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "components": [
-          {
-            "internalType": "address",
-            "name": "accountToLiquidate",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "liquidator",
-            "type": "address"
-          },
-          {
-            "internalType": "uint256",
-            "name": "index",
-            "type": "uint256"
-          },
-          {
-            "components": [
-              {
-                "internalType": "uint64",
-                "name": "index",
-                "type": "uint64"
-              },
-              {
-                "internalType": "uint80",
-                "name": "price",
-                "type": "uint80"
-              }
-            ],
-            "internalType": "struct LibValidatorMultiCFD.PriceInfo[]",
-            "name": "prices",
-            "type": "tuple[]"
-          },
-          {
-            "internalType": "uint32",
-            "name": "liquidationTimestamp",
-            "type": "uint32"
-          },
-          {
-            "internalType": "uint32",
-            "name": "expiration",
-            "type": "uint32"
-          },
-          {
-            "internalType": "bytes",
-            "name": "signature",
-            "type": "bytes"
-          }
-        ],
-        "internalType": "struct LibValidatorMultiCFD.LiquidationOrder",
-        "name": "liquidationOrder",
-        "type": "tuple"
-      }
-    ],
+    "inputs": [],
     "name": "liquidatePosition",
     "outputs": [],
     "stateMutability": "nonpayable",

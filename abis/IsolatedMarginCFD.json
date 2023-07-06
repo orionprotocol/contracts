@@ -22,12 +22,6 @@
       },
       {
         "indexed": false,
-        "internalType": "enum SingleCFD.UpdateReason",
-        "name": "reason",
-        "type": "uint8"
-      },
-      {
-        "indexed": false,
         "internalType": "uint80",
         "name": "positionPrice",
         "type": "uint80"
@@ -342,24 +336,6 @@
       }
     ],
     "name": "depositAssetTo",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "cfdContract",
-        "type": "address"
-      },
-      {
-        "internalType": "uint112",
-        "name": "amount",
-        "type": "uint112"
-      }
-    ],
-    "name": "depositAssetToAnotherCFD",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
