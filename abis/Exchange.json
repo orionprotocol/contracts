@@ -1,5 +1,35 @@
 [
     {
+        "inputs": [],
+        "name": "ETHTransferFailed",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "InsufficientBalance",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "InvalidMsgValue",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ReturnAmountIsNotEnough",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ZeroMinReturn",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ZeroReturnAmount",
+        "type": "error"
+    },
+    {
         "anonymous": false,
         "inputs": [
             {
@@ -103,6 +133,19 @@
             }
         ],
         "name": "AtomicRefunded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint8",
+                "name": "version",
+                "type": "uint8"
+            }
+        ],
+        "name": "Initialized",
         "type": "event"
     },
     {
@@ -900,92 +943,6 @@
         "type": "function"
     },
     {
-        "inputs": [
-            {
-                "components": [
-                    {
-                        "internalType": "address",
-                        "name": "senderAddress",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "address",
-                        "name": "matcherAddress",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "address",
-                        "name": "baseAsset",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "address",
-                        "name": "quoteAsset",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "address",
-                        "name": "matcherFeeAsset",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "uint64",
-                        "name": "amount",
-                        "type": "uint64"
-                    },
-                    {
-                        "internalType": "uint64",
-                        "name": "price",
-                        "type": "uint64"
-                    },
-                    {
-                        "internalType": "uint64",
-                        "name": "matcherFee",
-                        "type": "uint64"
-                    },
-                    {
-                        "internalType": "uint64",
-                        "name": "nonce",
-                        "type": "uint64"
-                    },
-                    {
-                        "internalType": "uint64",
-                        "name": "expiration",
-                        "type": "uint64"
-                    },
-                    {
-                        "internalType": "uint8",
-                        "name": "buySide",
-                        "type": "uint8"
-                    },
-                    {
-                        "internalType": "bool",
-                        "name": "isPersonalSign",
-                        "type": "bool"
-                    },
-                    {
-                        "internalType": "bytes",
-                        "name": "signature",
-                        "type": "bytes"
-                    }
-                ],
-                "internalType": "struct LibValidator.Order",
-                "name": "order",
-                "type": "tuple"
-            }
-        ],
-        "name": "getOrderHash",
-        "outputs": [
-            {
-                "internalType": "bytes32",
-                "name": "",
-                "type": "bytes32"
-            }
-        ],
-        "stateMutability": "pure",
-        "type": "function"
-    },
-    {
         "inputs": [],
         "name": "initialize",
         "outputs": [],
@@ -1449,6 +1406,87 @@
     {
         "inputs": [
             {
+                "internalType": "contract IAggregationExecutor",
+                "name": "executor",
+                "type": "address"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "contract IERC20",
+                        "name": "srcToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "contract IERC20",
+                        "name": "dstToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "srcReceiver",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "dstReceiver",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "amount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "minReturnAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "flags",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct ExchangeWithGenericSwap.SwapDescription",
+                "name": "desc",
+                "type": "tuple"
+            },
+            {
+                "internalType": "bytes",
+                "name": "permit",
+                "type": "bytes"
+            },
+            {
+                "internalType": "bytes",
+                "name": "data",
+                "type": "bytes"
+            }
+        ],
+        "name": "swap",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "returnAmount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "spentAmount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "gasLeft",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "internalType": "uint112",
                 "name": "amount_spend",
                 "type": "uint112"
@@ -1674,7 +1712,7 @@
             },
             {
                 "internalType": "address",
-                "name": "asseBNotETH",
+                "name": "assetBNotETH",
                 "type": "address"
             },
             {
