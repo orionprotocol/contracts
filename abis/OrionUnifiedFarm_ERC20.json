@@ -1,8 +1,16 @@
 [
   {
     "inputs": [
-      { "internalType": "address", "name": "_owner", "type": "address" },
-      { "internalType": "address", "name": "veORN_", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "veORN_",
+        "type": "address"
+      },
       {
         "internalType": "address[]",
         "name": "_rewardTokens",
@@ -28,7 +36,11 @@
         "name": "_rewardDistributors",
         "type": "address[]"
       },
-      { "internalType": "address", "name": "_stakingToken", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_stakingToken",
+        "type": "address"
+      }
     ],
     "stateMutability": "nonpayable",
     "type": "constructor"
@@ -235,7 +247,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "calcCurCombinedWeight",
     "outputs": [
@@ -260,8 +276,16 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" },
-      { "internalType": "uint256", "name": "stake_idx", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "stake_idx",
+        "type": "uint256"
+      }
     ],
     "name": "calcCurrLockMultiplier",
     "outputs": [
@@ -294,20 +318,38 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "combinedWeightOf",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "earned",
     "outputs": [
-      { "internalType": "uint256[]", "name": "new_earned", "type": "uint256[]" }
+      {
+        "internalType": "uint256[]",
+        "name": "new_earned",
+        "type": "uint256[]"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
@@ -315,7 +357,13 @@
   {
     "inputs": [],
     "name": "fraxPerLPStored",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -323,17 +371,31 @@
     "inputs": [],
     "name": "getAllRewardTokens",
     "outputs": [
-      { "internalType": "address[]", "name": "", "type": "address[]" }
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "addr", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
     ],
     "name": "getProxyFor",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -347,7 +409,11 @@
     ],
     "name": "getReward",
     "outputs": [
-      { "internalType": "uint256[]", "name": "", "type": "uint256[]" }
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
     ],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -359,11 +425,19 @@
         "name": "destination_address",
         "type": "address"
       },
-      { "internalType": "bool", "name": "claim_extra_too", "type": "bool" }
+      {
+        "internalType": "bool",
+        "name": "claim_extra_too",
+        "type": "bool"
+      }
     ],
     "name": "getReward2",
     "outputs": [
-      { "internalType": "uint256[]", "name": "", "type": "uint256[]" }
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
     ],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -396,7 +470,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "caller_addr", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "caller_addr",
+        "type": "address"
+      },
       {
         "internalType": "address",
         "name": "reward_token_addr",
@@ -404,28 +482,60 @@
       }
     ],
     "name": "isTokenManagerFor",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "lastRewardClaimTime",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "lastUpdateTime",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "bytes32", "name": "kek_id", "type": "bytes32" },
-      { "internalType": "uint256", "name": "addl_liq", "type": "uint256" }
+      {
+        "internalType": "bytes32",
+        "name": "kek_id",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "addl_liq",
+        "type": "uint256"
+      }
     ],
     "name": "lockAdditional",
     "outputs": [],
@@ -434,8 +544,16 @@
   },
   {
     "inputs": [
-      { "internalType": "bytes32", "name": "kek_id", "type": "bytes32" },
-      { "internalType": "uint256", "name": "new_ending_ts", "type": "uint256" }
+      {
+        "internalType": "bytes32",
+        "name": "kek_id",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "new_ending_ts",
+        "type": "uint256"
+      }
     ],
     "name": "lockLonger",
     "outputs": [],
@@ -444,57 +562,111 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "secs", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "secs",
+        "type": "uint256"
+      }
     ],
     "name": "lockMultiplier",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "lock_max_multiplier",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "lock_time_for_max_multiplier",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "lock_time_min",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "lockedLiquidityOf",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "", "type": "address" },
-      { "internalType": "uint256", "name": "", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
     "name": "lockedStakes",
     "outputs": [
-      { "internalType": "bytes32", "name": "kek_id", "type": "bytes32" },
+      {
+        "internalType": "bytes32",
+        "name": "kek_id",
+        "type": "bytes32"
+      },
       {
         "internalType": "uint256",
         "name": "start_timestamp",
         "type": "uint256"
       },
-      { "internalType": "uint256", "name": "liquidity", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "ending_timestamp",
@@ -511,19 +683,31 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "lockedStakesOf",
     "outputs": [
       {
         "components": [
-          { "internalType": "bytes32", "name": "kek_id", "type": "bytes32" },
+          {
+            "internalType": "bytes32",
+            "name": "kek_id",
+            "type": "bytes32"
+          },
           {
             "internalType": "uint256",
             "name": "start_timestamp",
             "type": "uint256"
           },
-          { "internalType": "uint256", "name": "liquidity", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "liquidity",
+            "type": "uint256"
+          },
           {
             "internalType": "uint256",
             "name": "ending_timestamp",
@@ -545,25 +729,49 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "lockedStakesOfLength",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "stakeAmount", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "stakeAmount",
+        "type": "uint256"
+      }
     ],
     "name": "minVeORNForMaxBoost",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_owner", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      }
     ],
     "name": "nominateNewOwner",
     "outputs": [],
@@ -573,27 +781,49 @@
   {
     "inputs": [],
     "name": "nominatedOwner",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "owner",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "periodFinish",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "staker_address", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "staker_address",
+        "type": "address"
+      }
     ],
     "name": "proxyToggleStaker",
     "outputs": [],
@@ -601,16 +831,36 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "proxy_lp_balances",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "tokenAddress", "type": "address" },
-      { "internalType": "uint256", "name": "tokenAmount", "type": "uint256" }
+      {
+        "internalType": "address",
+        "name": "tokenAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenAmount",
+        "type": "uint256"
+      }
     ],
     "name": "recoverERC20",
     "outputs": [],
@@ -618,34 +868,72 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "rewardManagers",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "token_idx", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "token_idx",
+        "type": "uint256"
+      }
     ],
     "name": "rewardRates",
     "outputs": [
-      { "internalType": "uint256", "name": "rwd_rate", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "rwd_rate",
+        "type": "uint256"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "rewardTokenAddrToIdx",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "rewardsDuration",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -677,8 +965,16 @@
   },
   {
     "inputs": [
-      { "internalType": "bool", "name": "_stakingPaused", "type": "bool" },
-      { "internalType": "bool", "name": "_withdrawalsPaused", "type": "bool" },
+      {
+        "internalType": "bool",
+        "name": "_stakingPaused",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "_withdrawalsPaused",
+        "type": "bool"
+      },
       {
         "internalType": "bool",
         "name": "_rewardsCollectionPaused",
@@ -697,7 +993,11 @@
         "name": "reward_token_address",
         "type": "address"
       },
-      { "internalType": "uint256", "name": "_new_rate", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "_new_rate",
+        "type": "uint256"
+      },
       {
         "internalType": "address",
         "name": "_gauge_controller_address",
@@ -716,17 +1016,35 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "liquidity", "type": "uint256" },
-      { "internalType": "uint256", "name": "secs", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "secs",
+        "type": "uint256"
+      }
     ],
     "name": "stakeLocked",
-    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "proxy_address", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "proxy_address",
+        "type": "address"
+      }
     ],
     "name": "stakerSetVeORNProxy",
     "outputs": [],
@@ -734,23 +1052,47 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "staker_designated_proxies",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "stakesUnlocked",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "stakingToken",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -763,7 +1105,11 @@
   },
   {
     "inputs": [
-      { "internalType": "bool", "name": "force_update", "type": "bool" }
+      {
+        "internalType": "bool",
+        "name": "force_update",
+        "type": "bool"
+      }
     ],
     "name": "sync_gauge_weights",
     "outputs": [],
@@ -772,7 +1118,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_proxy_addr", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_proxy_addr",
+        "type": "address"
+      }
     ],
     "name": "toggleValidVeORNProxy",
     "outputs": [],
@@ -782,14 +1132,26 @@
   {
     "inputs": [],
     "name": "totalCombinedWeight",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "totalLiquidityLocked",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -802,8 +1164,16 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" },
-      { "internalType": "bool", "name": "sync_too", "type": "bool" }
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "sync_too",
+        "type": "bool"
+      }
     ],
     "name": "updateRewardAndBalance",
     "outputs": [],
@@ -814,14 +1184,22 @@
     "inputs": [],
     "name": "veORN",
     "outputs": [
-      { "internalType": "contract IveORN", "name": "", "type": "address" }
+      {
+        "internalType": "contract IveToken",
+        "name": "",
+        "type": "address"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
     ],
     "name": "veORNMultiplier",
     "outputs": [
@@ -837,20 +1215,36 @@
   {
     "inputs": [],
     "name": "veorn_boost_scale_factor",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "veorn_max_multiplier",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "bytes32", "name": "kek_id", "type": "bytes32" },
+      {
+        "internalType": "bytes32",
+        "name": "kek_id",
+        "type": "bytes32"
+      },
       {
         "internalType": "address",
         "name": "destination_address",
@@ -858,7 +1252,13 @@
       }
     ],
     "name": "withdrawLocked",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   }

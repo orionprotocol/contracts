@@ -18,7 +18,7 @@
       },
       {
         "internalType": "address",
-        "name": "_veORN_address",
+        "name": "_veToken_address",
         "type": "address"
       }
     ],
@@ -237,11 +237,11 @@
         "type": "address"
       }
     ],
-    "name": "eligibleCurrentVeORN",
+    "name": "eligibleCurrentVeToken",
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "eligible_veorn_bal",
+        "name": "eligible_vetoken_bal",
         "type": "uint256"
       },
       {
@@ -570,7 +570,7 @@
   },
   {
     "inputs": [],
-    "name": "totalVeORNParticipating",
+    "name": "totalVeTokenParticipating",
     "outputs": [
       {
         "internalType": "uint256",
@@ -583,7 +583,7 @@
   },
   {
     "inputs": [],
-    "name": "totalVeORNSupplyStored",
+    "name": "totalVeTokenSupplyStored",
     "outputs": [
       {
         "internalType": "uint256",
@@ -621,7 +621,7 @@
         "type": "address"
       }
     ],
-    "name": "userVeORNCheckpointed",
+    "name": "userVeTokenCheckpointed",
     "outputs": [
       {
         "internalType": "uint256",
@@ -640,7 +640,7 @@
         "type": "address"
       }
     ],
-    "name": "userVeORNEndpointCheckpointed",
+    "name": "userVeTokenEndpointCheckpointed",
     "outputs": [
       {
         "internalType": "uint256",
@@ -698,7 +698,7 @@
   },
   {
     "inputs": [],
-    "name": "yieldPerVeORN",
+    "name": "yieldPerVeToken",
     "outputs": [
       {
         "internalType": "uint256",
@@ -711,7 +711,7 @@
   },
   {
     "inputs": [],
-    "name": "yieldPerVeORNStored",
+    "name": "yieldPerVeTokenStored",
     "outputs": [
       {
         "internalType": "uint256",
