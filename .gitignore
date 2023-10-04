@@ -1,5 +1,9 @@
-node_modules
-web3/
-ethers/
+/**/node_modules
+
 abis/*.d.ts
+
+**/*.tgz
+
+packages/**/*.ts
+
 lib/

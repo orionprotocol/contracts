@@ -1,2 +1,4 @@
 .github/
 package.json
+
+**/node_modules/
