@@ -31,7 +31,7 @@
     },
     {
         "inputs": [],
-        "name": "InvalidMsgValue",
+        "name": "InsufficientBalance",
         "type": "error"
     },
     {
@@ -41,27 +41,12 @@
     },
     {
         "inputs": [],
+        "name": "OnlyMatcher",
+        "type": "error"
+    },
+    {
+        "inputs": [],
         "name": "Overflow",
-        "type": "error"
-    },
-    {
-        "inputs": [],
-        "name": "ReturnAmountIsNotEnough",
-        "type": "error"
-    },
-    {
-        "inputs": [],
-        "name": "SafePermitBadLength",
-        "type": "error"
-    },
-    {
-        "inputs": [],
-        "name": "ZeroMinReturn",
-        "type": "error"
-    },
-    {
-        "inputs": [],
-        "name": "ZeroReturnAmount",
         "type": "error"
     },
     {
@@ -527,6 +512,190 @@
             }
         ],
         "name": "depositAsset",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "address",
+                                "name": "senderAddress",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "matcherAddress",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "baseAsset",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "quoteAsset",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "matcherFeeAsset",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "amount",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "price",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "matcherFee",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "nonce",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "expiration",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "uint8",
+                                "name": "buySide",
+                                "type": "uint8"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "isPersonalSign",
+                                "type": "bool"
+                            },
+                            {
+                                "internalType": "bytes",
+                                "name": "signature",
+                                "type": "bytes"
+                            }
+                        ],
+                        "internalType": "struct LibValidator.Order",
+                        "name": "limitOrder",
+                        "type": "tuple"
+                    },
+                    {
+                        "internalType": "uint24",
+                        "name": "chainId",
+                        "type": "uint24"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "secretHash",
+                        "type": "bytes32"
+                    }
+                ],
+                "internalType": "struct LibAtomic.CrossChainOrder",
+                "name": "userOrder",
+                "type": "tuple"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "senderAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "matcherAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "baseAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "quoteAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "matcherFeeAsset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "amount",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "price",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "matcherFee",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "nonce",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "expiration",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "uint8",
+                        "name": "buySide",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isPersonalSign",
+                        "type": "bool"
+                    },
+                    {
+                        "internalType": "bytes",
+                        "name": "signature",
+                        "type": "bytes"
+                    }
+                ],
+                "internalType": "struct LibValidator.Order",
+                "name": "brokerOrder",
+                "type": "tuple"
+            },
+            {
+                "internalType": "uint64",
+                "name": "filledPrice",
+                "type": "uint64"
+            },
+            {
+                "internalType": "uint64",
+                "name": "filledAmount",
+                "type": "uint64"
+            },
+            {
+                "internalType": "uint64",
+                "name": "lockOrderExpiration",
+                "type": "uint64"
+            }
+        ],
+        "name": "fillAndLockAtomic",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -1146,14 +1315,14 @@
                         "type": "address"
                     },
                     {
-                        "internalType": "uint64",
-                        "name": "expiration",
-                        "type": "uint64"
-                    },
-                    {
                         "internalType": "address",
                         "name": "asset",
                         "type": "address"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "expiration",
+                        "type": "uint64"
                     },
                     {
                         "internalType": "uint64",
@@ -1179,6 +1348,56 @@
         "name": "lockAtomic",
         "outputs": [],
         "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "sender",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "asset",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "expiration",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "amount",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "uint24",
+                        "name": "targetChainId",
+                        "type": "uint24"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "secretHash",
+                        "type": "bytes32"
+                    }
+                ],
+                "internalType": "struct LibAtomic.LockOrder",
+                "name": "lockOrder",
+                "type": "tuple"
+            }
+        ],
+        "name": "lockAtomicByMatcher",
+        "outputs": [],
+        "stateMutability": "nonpayable",
         "type": "function"
     },
     {
@@ -1762,44 +1981,6 @@
         "name": "withdraw",
         "outputs": [],
         "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "assetA",
-                "type": "address"
-            },
-            {
-                "internalType": "address",
-                "name": "asseBNotETH",
-                "type": "address"
-            },
-            {
-                "internalType": "uint256",
-                "name": "amountADesired",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "amountBDesired",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "amountAMin",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "amountBMin",
-                "type": "uint256"
-            }
-        ],
-        "name": "withdrawToPool",
-        "outputs": [],
-        "stateMutability": "payable",
         "type": "function"
     },
     {
