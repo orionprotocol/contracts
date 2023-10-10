@@ -1984,6 +1984,95 @@
         "type": "function"
     },
     {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "assetA",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "asseBNotETH",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amountADesired",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amountBDesired",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amountAMin",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amountBMin",
+                "type": "uint256"
+            }
+        ],
+        "name": "withdrawToPool",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint112",
+                "name": "amount_spend",
+                "type": "uint112"
+            },
+            {
+                "internalType": "uint112",
+                "name": "amount_receive",
+                "type": "uint112"
+            },
+            {
+                "internalType": "address[]",
+                "name": "path",
+                "type": "address[]"
+            },
+            {
+                "internalType": "bool",
+                "name": "is_exact_spend",
+                "type": "bool"
+            }
+        ],
+        "name": "swapThroughOrionPool",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint112",
+                "name": "amount_spend",
+                "type": "uint112"
+            },
+            {
+                "internalType": "uint112",
+                "name": "amount_receive",
+                "type": "uint112"
+            },
+            {
+                "internalType": "address[]",
+                "name": "path",
+                "type": "address[]"
+            }
+        ],
+        "name": "swapThroughOrionPoolSupportingFee",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
         "stateMutability": "payable",
         "type": "receive"
     }
