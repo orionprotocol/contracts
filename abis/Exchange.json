@@ -258,61 +258,6 @@
         "anonymous": false,
         "inputs": [
             {
-                "indexed": false,
-                "internalType": "address",
-                "name": "sender",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "internalType": "address",
-                "name": "st",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "internalType": "address",
-                "name": "rt",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "st_r",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "st_a",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "rt_r",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "rt_a",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "address",
-                "name": "f",
-                "type": "address"
-            }
-        ],
-        "name": "OrionPoolSwap",
-        "type": "event"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
                 "indexed": true,
                 "internalType": "address",
                 "name": "previousOwner",
@@ -1000,23 +945,7 @@
             }
         ],
         "name": "fillThroughPools",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "returnAmount",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "spentAmount",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "gasLeft",
-                "type": "uint256"
-            }
-        ],
+        "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
     },
@@ -1982,6 +1911,10 @@
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
+    },
+    {
+        "stateMutability": "payable",
+        "type": "receive"
     },
     {
         "inputs": [
