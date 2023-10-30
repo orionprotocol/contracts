@@ -844,57 +844,13 @@
     "inputs": [
       {
         "internalType": "address payable",
-        "name": "recipient",
-        "type": "address"
-      },
-      {
-        "internalType": "contract IERC20",
-        "name": "srcToken",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "minReturn",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "pools",
-        "type": "uint256[]"
-      },
-      {
-        "internalType": "bytes",
-        "name": "permit",
-        "type": "bytes"
-      }
-    ],
-    "name": "uniswapV3SwapToWithPermit",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "returnAmount",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address payable",
         "name": "to",
         "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
       }
     ],
     "name": "unwrapAndTransfer",
