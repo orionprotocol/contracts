@@ -32,6 +32,12 @@
         {
           "indexed": false,
           "internalType": "uint256",
+          "name": "rewardCumulativeTotal",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
           "name": "rateCumulative",
           "type": "uint256"
         },
@@ -69,6 +75,18 @@
         {
           "indexed": false,
           "internalType": "uint256",
+          "name": "rewardCumulativeTotal",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "rateCumulative",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
           "name": "timestamp",
           "type": "uint256"
         }
@@ -89,6 +107,12 @@
           "indexed": false,
           "internalType": "uint256",
           "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "rewardCumulativeTotal",
           "type": "uint256"
         },
         {
@@ -126,6 +150,12 @@
           "indexed": false,
           "internalType": "uint256",
           "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "rewardCumulativeTotal",
           "type": "uint256"
         },
         {
@@ -673,6 +703,24 @@
       "inputs": [
         {
           "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "percent",
+          "type": "uint256"
+        }
+      ],
+      "name": "unvotePercent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
           "name": "",
           "type": "address"
         }
@@ -757,6 +805,24 @@
         }
       ],
       "name": "voteArr",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "percent",
+          "type": "uint256"
+        }
+      ],
+      "name": "votePercent",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
