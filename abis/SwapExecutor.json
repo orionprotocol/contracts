@@ -2,8 +2,8 @@
   {
     "inputs": [
       {
-        "internalType": "address payable",
-        "name": "feeReceiver",
+        "internalType": "address",
+        "name": "exchangeAddress",
         "type": "address"
       },
       {
@@ -47,7 +47,17 @@
   },
   {
     "inputs": [],
+    "name": "EthDepositRejected",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "ExcessiveInputAmount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "Fallback",
     "type": "error"
   },
   {
@@ -89,6 +99,10 @@
     "inputs": [],
     "name": "ReturnAmountIsNotEnough",
     "type": "error"
+  },
+  {
+    "stateMutability": "nonpayable",
+    "type": "fallback"
   },
   {
     "inputs": [
@@ -250,24 +264,6 @@
     "name": "curveSwapStableAmountOut",
     "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      },
-      {
-        "internalType": "bytes[]",
-        "name": "calls",
-        "type": "bytes[]"
-      }
-    ],
-    "name": "func_70LYiww",
-    "outputs": [],
-    "stateMutability": "payable",
     "type": "function"
   },
   {
@@ -552,6 +548,29 @@
     "name": "patchCallsWithTokenBalance",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address payable",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "contract IERC20",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "feeAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "payFeeToMatcher",
+    "outputs": [],
+    "stateMutability": "payable",
     "type": "function"
   },
   {
@@ -870,5 +889,9 @@
     "outputs": [],
     "stateMutability": "payable",
     "type": "function"
+  },
+  {
+    "stateMutability": "payable",
+    "type": "receive"
   }
 ]
