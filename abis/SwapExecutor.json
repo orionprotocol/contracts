@@ -2,8 +2,8 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "exchangeAddress",
+        "internalType": "address payable",
+        "name": "feeReceiver",
         "type": "address"
       },
       {
@@ -264,6 +264,24 @@
     "name": "curveSwapStableAmountOut",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "calls",
+        "type": "bytes[]"
+      }
+    ],
+    "name": "func_70LYiww",
+    "outputs": [],
+    "stateMutability": "payable",
     "type": "function"
   },
   {
