@@ -61,6 +61,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "ZERO_PREVIOUS_VOTE",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -126,6 +131,37 @@
       }
     ],
     "name": "ProposalCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "name",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "choice",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "votePower",
+        "type": "uint256"
+      }
+    ],
+    "name": "ProposalUnvoted",
     "type": "event"
   },
   {
@@ -432,6 +468,29 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "name",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "previousChoice",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "newChoice",
+        "type": "bytes32"
+      }
+    ],
+    "name": "changeVoteProposal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
