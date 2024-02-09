@@ -227,6 +227,25 @@
       {
         "indexed": true,
         "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
         "name": "buyer",
         "type": "address"
       },
@@ -265,28 +284,15 @@
         "internalType": "uint192",
         "name": "amountQuote",
         "type": "uint192"
-      }
-    ],
-    "name": "NewTrade",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "previousOwner",
-        "type": "address"
       },
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "tradeId",
+        "type": "bytes32"
       }
     ],
-    "name": "OwnershipTransferred",
+    "name": "Trade",
     "type": "event"
   },
   {
