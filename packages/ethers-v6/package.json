@@ -3,7 +3,7 @@
   "main": "index.ts",
   "scripts": {
     "clean": "rimraf ./*.ts && rimraf ./factories",
-    "typechain": "typechain --target=ethers-v6 ../../abis/*.json --out-dir ."
+    "typechain": "typechain --node16-modules --target=ethers-v6 ../../abis/*.json --out-dir ."
   },
   "license": "MIT",
   "dependencies": {
