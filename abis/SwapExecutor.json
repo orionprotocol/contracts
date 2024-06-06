@@ -515,6 +515,34 @@
   {
     "inputs": [
       {
+        "internalType": "contract IPool[]",
+        "name": "pools",
+        "type": "address[]"
+      },
+      {
+        "internalType": "bool[]",
+        "name": "direct",
+        "type": "bool[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amountIn",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "finalTo",
+        "type": "address"
+      }
+    ],
+    "name": "swapAeroMulti",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "bytes[]",
         "name": "calls",
         "type": "bytes[]"
