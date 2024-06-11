@@ -7,3 +7,4 @@ abis/*.d.ts
 packages/**/*.ts
 
 lib/
+.DS_Store
