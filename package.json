@@ -1,6 +1,6 @@
 {
   "name": "@orionprotocol/contracts",
-  "version": "1.23.11",
+  "version": "1.23.12-rc",
   "type": "module",
   "description": "Orion Protocol contracts typings",
   "scripts": {
