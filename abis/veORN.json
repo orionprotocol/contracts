@@ -156,7 +156,7 @@
         "type": "address"
       }
     ],
-    "name": "FlexibleLockActivated",
+    "name": "DropLockActivated",
     "type": "event"
   },
   {
@@ -520,7 +520,7 @@
   },
   {
     "inputs": [],
-    "name": "activateFlexibleLock",
+    "name": "activateDropLock",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -812,7 +812,7 @@
       },
       {
         "internalType": "bool",
-        "name": "isFlexibleLock",
+        "name": "isDropLock",
         "type": "bool"
       }
     ],
@@ -832,6 +832,29 @@
         "internalType": "uint256",
         "name": "unlock_period",
         "type": "uint256"
+      }
+    ],
+    "name": "create_lock_period",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_value",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "unlock_period",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isDropLock",
+        "type": "bool"
       }
     ],
     "name": "create_lock_period",
@@ -860,7 +883,7 @@
         "type": "address"
       }
     ],
-    "name": "flexibleLockUsers",
+    "name": "dropLockUsers",
     "outputs": [
       {
         "internalType": "bool",
